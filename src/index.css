@@ -1,0 +1,39 @@
+/* * {
+  font-family: "Bad Script", cursive;
+  font-weight: lighter;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+h2,
+h3,
+p {
+  font-family: "Montserrat", sans-serif;
+  color: rgb(109, 109, 109);
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+  background-color: rgb(192, 176, 86);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgba(192, 176, 86, 0.849);
+  color: #fff;
+}
+
+input {
+  font-family: "Montserrat", sans-serif;
+  border: 1px solid rgba(192, 176, 86, 0.849);
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 5px;
+} */
