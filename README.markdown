@@ -39,14 +39,22 @@ Some of the key features of Root Craft include:
 
 # Tasks
 
-    [x] Boilerplate setup
-    [ ] Color input
-    [ ] Refactoring to improve code structure and readability
-    [ ] Add more pre-defined color palettes to help speed up the design process
-    [ ] Allow users to upload their own color palettes
-    [ ] Add customizable options for font sizes, line heights, and other properties
-    [ ] Add unit testing and integration testing
-    [ ] Improve accessibility and performance of the application
+| Task                                                                          | Time       | Break Time |
+| ----------------------------------------------------------------------------- | ---------- | ---------- |
+| ✅ Boilerplate setup                                                          | 25 minutes | 5 minutes  |
+| ▢ Create screen to show inputs                                                | 25 minutes | 5 minutes  |
+| ▢ Create screen show controls                                                 | 25 minutes | 5 minutes  |
+| ▢ Create a screen to show the CSS markdown file                               | 25 minutes | 5 minutes  |
+| ▢ Create Metrics input                                                        | 25 minutes | 5 minutes  |
+| ▢ Create Metrics control                                                      | 25 minutes | 5 minutes  |
+| ▢ Refactor Color input and ColorPicker                                        | 25 minutes | 5 minutes  |
+| ▢ Create Control color inputs                                                 | 25 minutes | 5 minutes  |
+| ▢ Create theming presets and list them                                        | 25 minutes | 5 minutes  |
+| ▢ Add more pre-defined color palettes to help speed up the design process     | 25 minutes | 5 minutes  |
+| ▢ Allow users to upload their own color palettes                              | 25 minutes | 5 minutes  |
+| ▢ Add customizable options for font sizes, line heights, and other properties | 25 minutes | 5 minutes  |
+| ▢ Add unit testing and integration testing                                    | 25 minutes | 5 minutes  |
+| ▢ Improve accessibility and performance of the application                    | 25 minutes | 15 minutes |
 
 # Roadmap
 

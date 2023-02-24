@@ -80,7 +80,7 @@ function App() {
     });
   };
   return (
-    <Box paddingLeft={4} paddingRight={4} h="100%">
+    <Box h="100%">
       <Stack
         direction="row"
         spacing={4}
@@ -107,7 +107,7 @@ function App() {
           colorScheme="gray"
           onClick={addItem}
         >
-          Dimensions
+          Metrics
         </Button>
 
         <Button
@@ -118,7 +118,7 @@ function App() {
           colorScheme="gray"
           onClick={addItem}
         >
-          Sizes
+          Units
         </Button>
       </Stack>
 
@@ -132,6 +132,8 @@ function App() {
           />
         ))}
       </Stack>
+
+      <Stack spacing={3} w="md" direction="column" mt={4} p={4}></Stack>
     </Box>
   );
 }
@@ -169,30 +171,17 @@ export const ColorPickerButton = ({
     setCurrentColor(color.hex);
   };
 
-  const handleCloseOverlay = (event: any) => {
-    // event.stopPropagation();
-    console.log(event.target.id);
-    // onClick(item.id);
-  };
   return (
     <Box>
       <InputGroup position="relative" key={item.id} gap={1} alignItems="center">
         <IconButton
-          size="sm"
-          variant="ghost"
+          size="xs"
+          variant="solid"
+          _hover={{ backgroundColor: currentColor }}
+          bgColor={currentColor}
           aria-label="Color Picker"
           onClick={handleColorPickVisibility}
-          icon={
-            <CloseButton
-              variant="unstyled"
-              _hover={{ backgroundColor: "transparent" }}
-              size="sm"
-              aria-label="Teste 2"
-              onClick={handleExcludeItem}
-            />
-          }
         />
-
         <Input
           paddingLeft={2}
           paddingRight={4}
@@ -200,29 +189,15 @@ export const ColorPickerButton = ({
           borderRadius={6}
           colorScheme="blackAlpha"
           variant="outline"
-          size="sm"
-          maxW="25rem"
+          size="xs"
+          maxW="15rem"
         />
 
-        <IconButton
+        <CloseButton
           size="sm"
-          variant="ghost"
-          // borderRadius="50%"
-          aria-label="Color Picker"
-          onClick={handleColorPickVisibility}
-          icon={
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill={currentColor}
-                d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2z"
-              ></path>
-            </svg>
-          }
+          variant="solid"
+          aria-label="Teste 2"
+          onClick={handleExcludeItem}
         />
         {item.isOpen && (
           <Box
@@ -235,7 +210,6 @@ export const ColorPickerButton = ({
             <Box
               position="absolute"
               top={0}
-              right="-14rem"
               display="flex"
               flexDirection="column"
               gap={1}
@@ -254,9 +228,6 @@ export const ColorPickerButton = ({
                     viewBox="0 0 24 24"
                     stroke="black"
                     fill="none"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
                   >
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
