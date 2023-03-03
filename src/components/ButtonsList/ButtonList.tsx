@@ -12,9 +12,15 @@ const ButtonStyles = {
 type ButtonListProps = {
   onClick: (type: ButtonsOptionsType) => void;
   onGenerate: () => void;
+  onRemoveAll: () => void;
   hasInvalidInput: boolean;
 };
-function ButtonList({ onClick, hasInvalidInput, onGenerate }: ButtonListProps) {
+function ButtonList({
+  onClick,
+  onRemoveAll,
+  hasInvalidInput,
+  onGenerate
+}: ButtonListProps) {
   const handleClickButton = (event: React.MouseEvent<HTMLButtonElement>) => {
     const { name } = event.target as HTMLButtonElement;
     onClick(name as ButtonsOptionsType);
@@ -31,6 +37,16 @@ function ButtonList({ onClick, hasInvalidInput, onGenerate }: ButtonListProps) {
       </Button>
       <Button {...ButtonStyles} name="btn-units" onClick={handleClickButton}>
         UNITS
+      </Button>
+      <Button
+        {...ButtonStyles}
+        bgColor="slategray"
+        color="whiteAlpha.800"
+        name="btn-units"
+        _hover={{ backgroundColor: "gray.500" }}
+        onClick={onRemoveAll}
+      >
+        Remove All
       </Button>
       <Button
         {...ButtonStyles}

@@ -3,23 +3,29 @@ import { VStack, Flex, Button, position } from "@chakra-ui/react";
 import Header from "./components/Header/Header";
 import Configurations from "./components/Configurations/Configurations";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { atelierLakesideDark as codeColor } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { atelierCaveDark as codeColor } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { useInputReducer } from "./hooks/useInputReducer";
 import { InputTypes } from "./types/types";
 import { useClipboard } from "@chakra-ui/react";
 
 function App() {
-  const { inputList, onAdd, onRemove, onUpdate } = useInputReducer();
+  const {
+    inputList,
+    onAdd,
+    onRemove,
+    onUpdate,
+    onRemoveAll
+  } = useInputReducer();
   const [code, setCurrentCode] = useState("");
-  const { onCopy, value, setValue, hasCopied } = useClipboard("");
-  const [hasError, setError] = useState(false);
+  const { onCopy, setValue, hasCopied } = useClipboard("");
+  const [, setError] = useState(false);
   const rootCode = `:root {\n${
     code ? code : "// The code will be generated here..."
   }\n}`;
 
   const handleOnGenerateCode = () => {
     let hasInvalidInput = false;
-    const templateStrings = inputList.map(inp => {
+    const templateStrings = inputList.map((inp: InputTypes) => {
       const formattedValue = inp.value
         .replace(/[^a-zA-Z0-9\s]+/g, "")
         .replace(/\s+/g, "-")
@@ -53,14 +59,17 @@ function App() {
         return !input.value || !input.color;
       case "btn-units":
         return !input.value || !input.rem;
-      default:
-        break;
     }
   });
 
   const handleClipboardCopy = () => {
-    onCopy();
     setValue(rootCode);
+    onCopy();
+  };
+
+  const handleRemoveAll = () => {
+    onRemoveAll();
+    setCurrentCode("");
   };
 
   return (
@@ -72,17 +81,12 @@ function App() {
           onAdd={onAdd}
           onRemove={onRemove}
           onUpdate={onUpdate}
-          hasInvalidInput={hasInvalidInput}
+          onRemoveAll={handleRemoveAll}
+          hasInvalidInput={hasInvalidInput || inputList.length <= 0}
           onGenerate={handleOnGenerateCode}
         />
 
-        <Flex
-          overflow="hidden"
-          w="2xl"
-          maxH="45rem"
-          minH="45rem"
-          position="relative"
-        >
+        <Flex overflow="hidden" w="3xl" minH="45rem" position="relative">
           <Button
             {...ButtonStyles}
             position="absolute"

@@ -1,17 +1,15 @@
 import { InputTypes, InputActionType } from "../types/types";
 
-export function inputsReducer(state: InputTypes[], action: InputActionType) {
+export function inputsReducer(
+  state: InputTypes[],
+  action: InputActionType
+): InputTypes[] | [] {
   switch (action.type) {
     case "add-input":
-      return [
-        ...state.map((item: InputTypes) => {
-          return { ...item, isOpen: false };
-        }),
-        action.payload
-      ];
+      return [...state, action.payload!];
     case "update-input":
       return state.map((item: InputTypes) => {
-        if (item.id === action.payload.id) {
+        if (item.id === action.payload!.id) {
           return {
             ...item,
             ...action.payload
@@ -21,7 +19,9 @@ export function inputsReducer(state: InputTypes[], action: InputActionType) {
         }
       });
     case "remove-input":
-      return state.filter((item: InputTypes) => item.id !== action.payload.id);
+      return state.filter((item: InputTypes) => item.id !== action.payload!.id);
+    case "remove-all-inputs":
+      return [];
     default:
       throw new Error();
   }

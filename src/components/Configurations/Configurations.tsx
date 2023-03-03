@@ -11,14 +11,16 @@ type ConfigurationsProps = {
   onRemove: (input: InputTypes) => void;
   onUpdate: (input: InputTypes) => void;
   onGenerate: () => void;
+  onRemoveAll: () => void;
   hasInvalidInput: boolean;
 };
 function Configurations({
+  list,
   onAdd,
   onRemove,
   onUpdate,
-  list,
   onGenerate,
+  onRemoveAll,
   hasInvalidInput
 }: ConfigurationsProps) {
   return (
@@ -27,6 +29,7 @@ function Configurations({
         <ButtonList
           onGenerate={onGenerate}
           hasInvalidInput={hasInvalidInput}
+          onRemoveAll={onRemoveAll}
           onClick={onAdd}
         />
         <InputsList

@@ -10,6 +10,6 @@ export type InputTypes = {
   id: string;
 };
 export type InputActionType = {
-  type: "add-input" | "update-input" | "remove-input";
-  payload: InputTypes;
+  type: "add-input" | "update-input" | "remove-input" | "remove-all-inputs";
+  payload?: InputTypes;
 };

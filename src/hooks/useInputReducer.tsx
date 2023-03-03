@@ -44,11 +44,16 @@ export const useInputReducer = () => {
       }
     });
   };
-
+  const onRemoveAll = () => {
+    dispatch({
+      type: "remove-all-inputs"
+    });
+  };
   return {
     inputList,
     onAdd,
     onRemove,
-    onUpdate
+    onUpdate,
+    onRemoveAll
   };
 };
