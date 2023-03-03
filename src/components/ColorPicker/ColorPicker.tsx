@@ -19,14 +19,13 @@ function ColorPicker({
   return (
     <Box
       position="absolute"
-      top={0}
-      left="calc(55% + .1rem)"
+      top="calc(50% + 15px)"
+      left="calc(25% + 4px)"
       id="teste-id"
       zIndex="dropdown"
     >
       <Box display="flex" flexDir="column" gap={1}>
         <IconButton
-          size="xs"
           variant="ghost"
           _hover={{ backgroundColor: "rgba(216,216,216, .3)" }}
           alignSelf="flex-start"
@@ -34,8 +33,8 @@ function ColorPicker({
           icon={
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="14"
-              height="14"
+              width="18"
+              height="18"
               viewBox="0 0 24 24"
               stroke="black"
               fill="none"

@@ -3,20 +3,37 @@ import { Flex, Container } from "@chakra-ui/react";
 
 import ButtonList from "../ButtonsList/ButtonList";
 import InputsList from "../InputsList/InputsList";
-import { useInputReducer } from "../../hooks/useInputReducer";
+import { InputTypes, ButtonsOptionsType } from "../../types/types";
 
-function Configurations() {
-  const { add, remove, update, inputList } = useInputReducer();
-
+type ConfigurationsProps = {
+  list: InputTypes[];
+  onAdd: (type: ButtonsOptionsType) => void;
+  onRemove: (input: InputTypes) => void;
+  onUpdate: (input: InputTypes) => void;
+  onGenerate: () => void;
+  hasInvalidInput: boolean;
+};
+function Configurations({
+  onAdd,
+  onRemove,
+  onUpdate,
+  list,
+  onGenerate,
+  hasInvalidInput
+}: ConfigurationsProps) {
   return (
-    <Flex flex="1" w="100%">
+    <Flex>
       <Container m={0} p={0}>
-        <ButtonList onClick={add} />
+        <ButtonList
+          onGenerate={onGenerate}
+          hasInvalidInput={hasInvalidInput}
+          onClick={onAdd}
+        />
         <InputsList
-          onClick={add}
-          onRemove={remove}
-          onUpdate={update}
-          list={inputList}
+          onAdd={onAdd}
+          onRemove={onRemove}
+          onUpdate={onUpdate}
+          list={list}
         />
       </Container>
     </Flex>

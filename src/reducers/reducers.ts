@@ -14,10 +14,10 @@ export function inputsReducer(state: InputTypes[], action: InputActionType) {
         if (item.id === action.payload.id) {
           return {
             ...item,
-            isOpen: !item.isOpen
+            ...action.payload
           };
         } else {
-          return { ...item, isOpen: false };
+          return { ...item };
         }
       });
     case "remove-input":

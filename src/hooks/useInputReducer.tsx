@@ -13,18 +13,21 @@ export const useInputReducer = () => {
     (state: InputTypes[], action: InputActionType) => InputTypes[]
   >(inputsReducer, []);
 
-  const add = (type: ButtonsOptionsType) => {
+  const onAdd = (type: ButtonsOptionsType) => {
     dispatch({
       type: "add-input",
       payload: {
         id: generateUniqueId(),
         isOpen: false,
+        color: "",
+        value: "",
+        rem: "",
         type
       }
     });
   };
 
-  const remove = (input: InputTypes) => {
+  const onRemove = (input: InputTypes) => {
     dispatch({
       type: "remove-input",
       payload: {
@@ -33,7 +36,7 @@ export const useInputReducer = () => {
     });
   };
 
-  const update = (input: InputTypes) => {
+  const onUpdate = (input: InputTypes) => {
     dispatch({
       type: "update-input",
       payload: {
@@ -44,8 +47,8 @@ export const useInputReducer = () => {
 
   return {
     inputList,
-    add,
-    remove,
-    update
+    onAdd,
+    onRemove,
+    onUpdate
   };
 };

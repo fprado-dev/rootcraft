@@ -1,12 +1,12 @@
-export type ButtonsOptionsType =
-  | "btn-color"
-  | "btn-metrics"
-  | "btn-units"
-  | "btn-custom";
+export type ButtonsOptionsType = "btn-color" | "btn-units" | "btn-custom";
+export type InputOptionsType = "colors" | "btn-units" | "btn-custom";
 
 export type InputTypes = {
   type: ButtonsOptionsType;
   isOpen: Boolean;
+  value: string;
+  rem?: string;
+  color?: string;
   id: string;
 };
 export type InputActionType = {
