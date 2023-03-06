@@ -1,9 +1,8 @@
 import React from "react";
 import { Flex, Container } from "@chakra-ui/react";
 
-import ButtonList from "../ButtonsList/ButtonList";
-import InputsList from "../InputsList/InputsList";
-import { InputTypes, ButtonsOptionsType } from "../../types/types";
+import { ButtonsList, InputsList } from "@rootcraft/components";
+import { InputTypes, ButtonsOptionsType } from "@rootcraft/types";
 
 type ConfigurationsProps = {
   list: InputTypes[];
@@ -26,7 +25,7 @@ function Configurations({
   return (
     <Flex>
       <Container m={0} p={0}>
-        <ButtonList
+        <ButtonsList
           onGenerate={onGenerate}
           hasInvalidInput={hasInvalidInput}
           onRemoveAll={onRemoveAll}

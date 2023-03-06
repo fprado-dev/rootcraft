@@ -1,8 +1,8 @@
 import React from "react";
 import { Stack } from "@chakra-ui/react";
-import { ColorInput } from "../ColorInput/ColorInput";
-import { InputTypes, ButtonsOptionsType } from "../../types/types";
-import { UnitInput } from "../UnitInput/UnitInput";
+
+import { ColorInput, UnitInput } from "@rootcraft/components";
+import { InputTypes, ButtonsOptionsType } from "@rootcraft/types";
 
 type InputsListProps = {
   list: InputTypes[];

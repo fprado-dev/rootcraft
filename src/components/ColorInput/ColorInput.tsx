@@ -9,9 +9,10 @@ import {
   Flex,
   Tag
 } from "@chakra-ui/react";
-import ColorPicker from "../ColorPicker/ColorPicker";
 import { ColorResult } from "react-color";
-import { InputTypes } from "../../types/types";
+
+import { ColorPicker } from "@rootcraft/components";
+import { InputTypes } from "@rootcraft/types";
 
 type ColorInputProps = {
   input: InputTypes;

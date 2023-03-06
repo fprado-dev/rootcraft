@@ -1,0 +1,1 @@
+export { useInputReducer } from "./useInputReducer";

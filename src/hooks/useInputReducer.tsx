@@ -3,10 +3,10 @@ import {
   InputActionType,
   InputTypes,
   ButtonsOptionsType
-} from "../types/types";
+} from "@rootcraft/types";
 
-import { inputsReducer } from "../reducers/reducers";
-import { generateUniqueId } from "../utils";
+import { inputsReducer } from "@rootcraft/reducers";
+import { generateUniqueId } from "@rootcraft/utils";
 
 export const useInputReducer = () => {
   const [inputList, dispatch] = useReducer<

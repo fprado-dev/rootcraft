@@ -14,10 +14,31 @@
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
     "moduleResolution": "Node",
-    "resolveJsonModule": true,
+    "resolveJsonModule": false,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": "",
+    "paths": {
+      "@rootcraft/*": [
+        "src/*"
+      ],
+      "@rootcraft/hooks/*": [
+        "hooks/*"
+      ],
+      "@rootcraft/components/*": [
+        "components/*"
+      ],
+      "@rootcraft/types/*": [
+        "types/*"
+      ],
+      "@rootcraft/reducers/*": [
+        "reducers/*"
+      ],
+      "@rootcraft/utils/*": [
+        "utils/*"
+      ],
+    },
   },
   "include": [
     "src"

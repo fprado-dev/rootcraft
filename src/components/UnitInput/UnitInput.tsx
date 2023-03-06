@@ -11,7 +11,7 @@ import {
   NumberInput,
   NumberInputField
 } from "@chakra-ui/react";
-import { InputTypes } from "../../types/types";
+import { InputTypes } from "@rootcraft/types";
 
 type UnitInputProps = {
   input: InputTypes;

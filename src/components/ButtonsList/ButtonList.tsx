@@ -1,6 +1,7 @@
 import React from "react";
 import { HStack, Button } from "@chakra-ui/react";
-import { ButtonsOptionsType } from "../../types/types";
+
+import { ButtonsOptionsType } from "@rootcraft/types";
 const ButtonStyles = {
   borderRadius: 6,
   fontSize: ".8rem",

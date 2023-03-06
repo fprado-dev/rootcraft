@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { VStack, Flex, Button, position } from "@chakra-ui/react";
-import Header from "./components/Header/Header";
-import Configurations from "./components/Configurations/Configurations";
+import { VStack, Flex, Button } from "@chakra-ui/react";
+import { useClipboard } from "@chakra-ui/react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atelierCaveDark as codeColor } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { useInputReducer } from "./hooks/useInputReducer";
-import { InputTypes } from "./types/types";
-import { useClipboard } from "@chakra-ui/react";
+
+import { Configurations, Header } from "@rootcraft/components";
+import { useInputReducer } from "@rootcraft/hooks";
+import { InputTypes } from "@rootcraft/types";
 
 function App() {
   const {

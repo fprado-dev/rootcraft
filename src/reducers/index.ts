@@ -1,4 +1,4 @@
-import { InputTypes, InputActionType } from "../types/types";
+import { InputTypes, InputActionType } from "@rootcraft/types";
 
 export function inputsReducer(
   state: InputTypes[],
